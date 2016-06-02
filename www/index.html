@@ -1,0 +1,210 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Security-Policy" content="default-src * data:; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'">
+    <script src="components/loader.js"></script>
+    <script src="lib/onsenui/js/onsenui.min.js"></script>
+
+    <link rel="stylesheet" href="components/loader.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsenui.css">
+    <link rel="stylesheet" href="lib/onsenui/css/onsen-css-components.css">
+
+    <script>
+        ons.ready(function() {
+            console.log("Onsen UI is ready!");
+        });
+        
+        window.fn = {};
+        window.fn.open = function() {
+          var menu = document.getElementById('menu');
+          menu.open();
+        };
+        window.fn.load = function(page) {
+          var content = document.getElementById('content');
+          var menu = document.getElementById('menu');
+          content.load(page)
+            .then(menu.close.bind(menu));
+        };
+          
+    </script>
+</head>
+<body>
+  <ons-splitter>
+    <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+      <ons-page>
+        <ons-list>
+          <ons-list-item onclick="fn.load('home.html')" tappable>
+            Vessel Home
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('clubRegatta.html')" tappable>
+            Club Regatta
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('start.html')" tappable>
+            Start
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('race.html')" tappable>
+            Race
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('wpt.html')" tappable>
+            Waypoint
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('rte.html')" tappable>
+            Route
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('trk.html')" tappable>
+            Track
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('test1.html')" tappable>
+            Test_1
+          </ons-list-item>
+          <ons-list-item onclick="fn.load('test2.html')" tappable>
+            Test_2
+          </ons-list-item>
+        </ons-list>
+      </ons-page>
+    </ons-splitter-side>
+    <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+  </ons-splitter>
+  
+  <ons-template id="home.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Vessel Home
+        </div>
+      </ons-toolbar>
+      <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+        Swipe right to open the menu!
+      </p>
+    </ons-page>
+  </ons-template>
+  
+  <ons-template id="clubRegatta.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Club Regatta
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+  
+  <ons-template id="start.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Start
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+    
+  <ons-template id="race.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Race
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+    
+  <ons-template id="wpt.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Waypoint
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+    
+  <ons-template id="rte.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Route
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+    
+  <ons-template id="trk.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Track
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>
+    
+  <!--<ons-template id="test1.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Test_1
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>-->
+    
+  <!--<ons-template id="test2.html">
+    <ons-page>
+      <ons-toolbar>
+        <div class="left">
+          <ons-toolbar-button onclick="fn.open()">
+            <ons-icon icon="md-menu"></ons-icon>
+          </ons-toolbar-button>
+        </div>
+        <div class="center">
+          Test_2
+        </div>
+      </ons-toolbar>
+    </ons-page>
+  </ons-template>-->
+    
+</body>
+</html>
